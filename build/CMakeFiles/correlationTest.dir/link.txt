@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wall -Wextra -march=native -fopenmp -Ofast -Wno-class-memaccess -fvisibility=hidden -O3 -DNDEBUG -rdynamic CMakeFiles/correlationTest.dir/main.cpp.o -o correlationTest  -lfftw3
