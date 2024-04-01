@@ -190,8 +190,6 @@ void sampleCorrelationWithNoise(const std::string& fileName_vtk, const std::stri
             // random numbers
             REAL_SCALAR Nk_xy = distribution(generator);
             REAL_SCALAR Mk_xy = distribution(generator);
-            //Rk_isf[i] = sqrt(Rk_isf[i])*(Nk_xy+Mk_xy*COMPLEX(0.0,1.0)/sqrt(2.0));
-            //frHat[i] = sqrt(Rk_isf[i])*((Nk_xy+Mk_xy*COMPLEX(0.0,1.0))/sqrt(2.0));
             frHat[i] = std::sqrt(Rk_isf[i])*((Nk_xy+Mk_xy*COMPLEX(0.0,1.0))/std::sqrt(2.0));
         }
 
@@ -202,6 +200,7 @@ void sampleCorrelationWithNoise(const std::string& fileName_vtk, const std::stri
         }
     }
 
+    // ensemble average
     for (int k=0; k<NK; ++k) 
     {
         frHatCorrelation[k] = frHatCorrelation[k]/static_cast<double>(sampleSize);
